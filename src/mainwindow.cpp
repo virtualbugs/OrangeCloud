@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
       ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Orange Cloud Weather App");
     weather = new Weather;
 
     day_1 = new WeatherItem();
