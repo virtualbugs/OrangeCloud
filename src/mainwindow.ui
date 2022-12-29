@@ -13,13 +13,19 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="3,2">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(36, 37, 38);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="3,0,2">
    <item>
     <layout class="QHBoxLayout" name="hlayout_top" stretch="2,3">
      <item>
       <layout class="QVBoxLayout" name="vlayout_today" stretch="1,5,1">
        <item>
         <widget class="QLabel" name="today_date">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255)</string>
+         </property>
          <property name="text">
           <string>Date</string>
          </property>
@@ -34,6 +40,9 @@
        </item>
        <item>
         <widget class="QLabel" name="today_degree">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255)</string>
+         </property>
          <property name="text">
           <string>Degree</string>
          </property>
@@ -48,7 +57,8 @@
          <item>
           <widget class="QLabel" name="city">
            <property name="styleSheet">
-            <string notr="true">font: 25pt &quot;Sans Serif&quot;;</string>
+            <string notr="true">font: 25pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255)</string>
            </property>
            <property name="text">
             <string>City</string>
@@ -67,6 +77,9 @@
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
              </property>
              <property name="text">
               <string>Change</string>
@@ -93,6 +106,9 @@
           <layout class="QHBoxLayout" name="hlayout_timelineboxes">
            <item>
             <widget class="QRadioButton" name="time_00_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>00:00 ____</string>
              </property>
@@ -100,6 +116,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_03_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>03:00 ____</string>
              </property>
@@ -107,6 +126,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_06_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>06:00 ____</string>
              </property>
@@ -114,6 +136,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_09_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>09:00 ____</string>
              </property>
@@ -121,6 +146,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_12_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>12:00 ____</string>
              </property>
@@ -131,6 +159,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_15_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>15:00 ____</string>
              </property>
@@ -138,6 +169,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_18_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>18:00 ____</string>
              </property>
@@ -145,6 +179,9 @@
            </item>
            <item>
             <widget class="QRadioButton" name="time_21_00">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255)</string>
+             </property>
              <property name="text">
               <string>21:00 ____</string>
              </property>
@@ -159,7 +196,8 @@
              <item>
               <widget class="QLabel" name="selected_hour_weather_info">
                <property name="styleSheet">
-                <string notr="true">font: 18pt &quot;Sans Serif&quot;;</string>
+                <string notr="true">font: 18pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255)</string>
                </property>
                <property name="text">
                 <string>Clear Sky</string>
@@ -171,7 +209,8 @@
                <item>
                 <widget class="QLabel" name="label_7">
                  <property name="styleSheet">
-                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255)</string>
                  </property>
                  <property name="text">
                   <string>Tempture </string>
@@ -208,7 +247,8 @@
                <item>
                 <widget class="QLabel" name="label_7">
                  <property name="styleSheet">
-                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255)</string>
                  </property>
                  <property name="text">
                   <string>Wind </string>
@@ -245,7 +285,8 @@
                <item>
                 <widget class="QLabel" name="label_7">
                  <property name="styleSheet">
-                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255)</string>
                  </property>
                  <property name="text">
                   <string>Cloudy (%) </string>
@@ -282,7 +323,8 @@
                <item>
                 <widget class="QLabel" name="label_7">
                  <property name="styleSheet">
-                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 12pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255)</string>
                  </property>
                  <property name="text">
                   <string>Humidity </string>
@@ -332,15 +374,26 @@
     </layout>
    </item>
    <item>
+    <widget class="Line" name="line">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(255, 0, 0)</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="hlayout_days">
      <item>
-      <layout class="QVBoxLayout" name="day1_vlayout" stretch=""/>
+      <layout class="QVBoxLayout" name="day1_vlayout"/>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="day2_vlayout" stretch=""/>
+      <layout class="QVBoxLayout" name="day2_vlayout"/>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="day3_vlayout" stretch=""/>
+      <layout class="QVBoxLayout" name="day3_vlayout"/>
      </item>
     </layout>
    </item>
