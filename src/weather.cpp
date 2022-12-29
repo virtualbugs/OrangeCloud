@@ -4,7 +4,6 @@ const QString Weather::API_key = "e3dcb98698bd304c5cefb21215978a72";
 
 Weather::Weather()
 {
-    currentTemp = "unknown";
     city = "unknown";
     icon = "qrc:/img/01.png";
     api_units = "metric";
@@ -32,27 +31,27 @@ void Weather::httpRequest(RequestType rType)
 
     request = new QNetworkRequest(http_request_url);
     networkManager = new QNetworkAccessManager(this);
-    reply = networkManager->get(*request);
+    weatherDataReply = networkManager->get(*request);
 
     connect(networkManager, &QNetworkAccessManager::finished,
-            this, &Weather::replyFinished);
-    connect(reply, &QIODevice::readyRead,
-            this, &Weather::slotReadyRead);
-    connect(reply, &QNetworkReply::errorOccurred,
-            this, &Weather::slotError);
-    connect(reply, &QNetworkReply::sslErrors,
-            this, &Weather::slotSslErrors);
+            this, &Weather::onWeatherDataFetchingCompleted);
+    connect(weatherDataReply, &QIODevice::readyRead,
+            this, &Weather::onWeatherDataArrived);
+    connect(weatherDataReply, &QNetworkReply::errorOccurred,
+            this, &Weather::onNetworkReplyError);
+    connect(weatherDataReply, &QNetworkReply::sslErrors,
+            this, &Weather::on_SSL_Error);
 }
 
 
-void Weather::replyFinished()
+void Weather::onWeatherDataFetchingCompleted()
 {
-    qDebug() << "finished !!!";
+    qDebug() << "Weather Data Fetching Is Completed.";
 }
 
-void Weather::slotReadyRead()
+void Weather::onWeatherDataArrived()
 {
-    const QByteArray data = reply->readAll();
+    const QByteArray data = weatherDataReply->readAll();
 
     if(reqType == RequestType::GEO) {
         QJsonDocument document = QJsonDocument::fromJson(data);
@@ -113,23 +112,19 @@ void Weather::slotReadyRead()
             weatherInfos.push_back(weather_info);
          }
     }
-    emit weatherInfoArrived();
+    emit weatherDataReady();
 }
 
-void Weather::slotError(QNetworkReply::NetworkError error)
+void Weather::onNetworkReplyError(QNetworkReply::NetworkError error)
 {
-    qDebug() << "slotError : error code : " << error;
+    qDebug() << "Weather::onNetworkReplyError() : Network Reply Error, error code : " << error;
 }
 
-void Weather::slotSslErrors()
+void Weather::on_SSL_Error()
 {
-    qDebug() << "slot_SSL_error";
+    qDebug() << "Weather::on_SSL_Error() : SSL Error";
 }
 
-QString Weather::getCurrentTemp()
-{
-    return currentTemp;
-}
 
 QString Weather::getCity()
 {

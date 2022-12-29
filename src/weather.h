@@ -51,7 +51,7 @@ struct Date {
 };
 
 enum Days {
-    DAY1,
+    DAY1 = 0,
     DAY2,
     DAY3,
     DAY4,
@@ -66,12 +66,11 @@ public:
 
     QNetworkRequest* request;
     QNetworkAccessManager* networkManager;
-    QNetworkReply *reply;
+    QNetworkReply *weatherDataReply;
     QUrl http_request_url;
 
     QString api_units;
     QString api_city;
-    QString currentTemp;
     QString maxTemp;
     QString minTemp;
     QString city;
@@ -83,11 +82,10 @@ public:
     QList<WeatherInfo> weatherInfos;
 
 public slots:
-    void replyFinished();
-    void slotReadyRead();
-    void slotError(QNetworkReply::NetworkError error);
-    void slotSslErrors();
-    QString getCurrentTemp();
+    void onWeatherDataFetchingCompleted();
+    void onWeatherDataArrived();
+    void onNetworkReplyError(QNetworkReply::NetworkError error);
+    void on_SSL_Error();
     QString getCity();
     QString getIcon();
 
@@ -96,7 +94,7 @@ private:
     void httpRequest(RequestType );
 
 signals:
-    void weatherInfoArrived();
+    void weatherDataReady();
 };
 
 #endif // WEATHER_H

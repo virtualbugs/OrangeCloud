@@ -13,14 +13,12 @@ MainWindow::MainWindow(QWidget *parent)
     day_1 = new WeatherItem();
     day_2 = new WeatherItem();
     day_3 = new WeatherItem();
-   // this->layout()->addWidget(day_1);
-   // this->layout()->addWidget(day_2);
-    //QPushButton* button = new QPushButton("CLICK");
-    //this->layout()->addWidget(button);
-   // this->layout()->addWidget(day_3);
+    ui->day1_vlayout->addWidget(day_1);
+    ui->day2_vlayout->addWidget(day_2);
+    ui->day3_vlayout->addWidget(day_3);
 
 
-    connect(weather, SIGNAL(weatherInfoArrived()),
+    connect(weather, SIGNAL(weatherDataReady()),
             this, SLOT(setData()));
 }
 

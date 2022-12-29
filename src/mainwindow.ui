@@ -334,79 +334,13 @@
    <item>
     <layout class="QHBoxLayout" name="hlayout_days">
      <item>
-      <layout class="QVBoxLayout" name="day1_vlayout" stretch="0,4,1">
-       <item>
-        <widget class="QLabel" name="day1_date">
-         <property name="text">
-          <string>Date</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="day1_image">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="day1_degree">
-         <property name="text">
-          <string>Degree</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="day1_vlayout" stretch=""/>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="day2_vlayout" stretch="0,4,1">
-       <item>
-        <widget class="QLabel" name="day2_date">
-         <property name="text">
-          <string>Date</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="day2_image">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="day2_degree">
-         <property name="text">
-          <string>Degree</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="day2_vlayout" stretch=""/>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="day3_vlayout" stretch="0,4,1">
-       <item>
-        <widget class="QLabel" name="day3_date">
-         <property name="text">
-          <string>Date</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="day3_image">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="day3_degree">
-         <property name="text">
-          <string>Degree</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="day3_vlayout" stretch=""/>
      </item>
     </layout>
    </item>

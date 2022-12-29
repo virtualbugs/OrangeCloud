@@ -16,12 +16,12 @@ WeatherItem::~WeatherItem()
 
 void WeatherItem::setDate(const QString &newDate)
 {
-    ui->label_date->setText(newDate);
+    ui->day_date->setText(newDate);
 }
 
 void WeatherItem::setTemp(const QString &newTemp)
 {
-    ui->label_temp->setText(newTemp);
+    ui->day_degree->setText(newTemp);
 }
 
 void WeatherItem::setIcon(const QString &newIcon)
@@ -50,5 +50,5 @@ void WeatherItem::setIcon(const QString &newIcon)
     }
 
 
-    ui->label_icon->setPixmap(pix);
+    ui->day_image->setPixmap(pix);
 }
