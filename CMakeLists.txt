@@ -44,6 +44,7 @@ target_link_libraries(OrangeCloud PRIVATE
     Qt${QT_VERSION_MAJOR}::Network
     Qt${QT_VERSION_MAJOR}::Gui
     Qt${QT_VERSION_MAJOR}::Network
+    ${CMAKE_CURRENT_SOURCE_DIR}/bin/openweather3parthlib
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
