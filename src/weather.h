@@ -55,7 +55,6 @@ enum Days {
     DAY2,
     DAY3,
     DAY4,
-    DAY5,
 };
 
 class Weather: public QObject
@@ -63,6 +62,8 @@ class Weather: public QObject
     Q_OBJECT
 public:
     Weather();
+
+    QString day0_temp, day1_temp, day2_temp, day3_temp;
 
     QNetworkRequest* request;
     QNetworkAccessManager* networkManager;
@@ -79,7 +80,7 @@ public:
     RequestType reqType;
     QVector<LocationInfo> locationInfos;
     LocationInfo selectedLocationInfo;
-    QList<WeatherInfo> weatherInfos;
+    WeatherInfo weatherInfos[4][8];
 
 public slots:
     void onWeatherDataFetchingCompleted();
@@ -88,13 +89,13 @@ public slots:
     void on_SSL_Error();
     QString getCity();
     QString getIcon();
-
-private:
-    static const QString API_key;
-    void httpRequest(RequestType );
+    void startRequest(RequestType req=RequestType::WEATHER );
 
 signals:
     void weatherDataReady();
+
+private:
+    void insertWeatherInfo(WeatherInfo);
 };
 
 #endif // WEATHER_H

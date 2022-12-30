@@ -20,6 +20,7 @@ public:
 private:
     Ui::MainWindow* ui;
     Weather* weather;
+    WeatherItem *day_0;
     WeatherItem *day_1;
     WeatherItem *day_2;
     WeatherItem *day_3;

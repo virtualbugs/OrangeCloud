@@ -20,35 +20,7 @@
    <item>
     <layout class="QHBoxLayout" name="hlayout_top" stretch="2,3">
      <item>
-      <layout class="QVBoxLayout" name="vlayout_today" stretch="1,5,1">
-       <item>
-        <widget class="QLabel" name="today_date">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255)</string>
-         </property>
-         <property name="text">
-          <string>Date</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="today_image">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="today_degree">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255)</string>
-         </property>
-         <property name="text">
-          <string>Degree</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="vlayout_today"/>
      </item>
      <item>
       <layout class="QVBoxLayout" name="vlayout_top_right" stretch="1,5">
@@ -205,9 +177,9 @@ color: rgb(255, 255, 255)</string>
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="hlayout_humidty" stretch="1,0,3">
+              <layout class="QHBoxLayout" name="hlayout_temp" stretch="1,0,3">
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="label_7temp">
                  <property name="styleSheet">
                   <string notr="true">font: 12pt &quot;Sans Serif&quot;;
 color: rgb(255, 255, 255)</string>
@@ -220,7 +192,8 @@ color: rgb(255, 255, 255)</string>
                <item>
                 <widget class="QLabel" name="selected_hour_temp">
                  <property name="styleSheet">
-                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -243,9 +216,9 @@ color: rgb(255, 255, 255)</string>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="hlayout_humidty" stretch="1,0,3">
+              <layout class="QHBoxLayout" name="hlayout_wind" stretch="1,0,3">
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="label_7wind">
                  <property name="styleSheet">
                   <string notr="true">font: 12pt &quot;Sans Serif&quot;;
 color: rgb(255, 255, 255)</string>
@@ -258,7 +231,8 @@ color: rgb(255, 255, 255)</string>
                <item>
                 <widget class="QLabel" name="selected_hour_wind">
                  <property name="styleSheet">
-                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -281,9 +255,9 @@ color: rgb(255, 255, 255)</string>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="hlayout_humidty" stretch="1,0,3">
+              <layout class="QHBoxLayout" name="hlayout_cloudy" stretch="1,0,3">
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="label_7cloudy">
                  <property name="styleSheet">
                   <string notr="true">font: 12pt &quot;Sans Serif&quot;;
 color: rgb(255, 255, 255)</string>
@@ -296,7 +270,8 @@ color: rgb(255, 255, 255)</string>
                <item>
                 <widget class="QLabel" name="seleceted_hour_cloud">
                  <property name="styleSheet">
-                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
                   <string>0</string>
@@ -321,7 +296,7 @@ color: rgb(255, 255, 255)</string>
              <item>
               <layout class="QHBoxLayout" name="hlayout_humidty" stretch="1,0,3">
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="label_7humidity">
                  <property name="styleSheet">
                   <string notr="true">font: 12pt &quot;Sans Serif&quot;;
 color: rgb(255, 255, 255)</string>
@@ -334,7 +309,8 @@ color: rgb(255, 255, 255)</string>
                <item>
                 <widget class="QLabel" name="selected_hour_humidity">
                  <property name="styleSheet">
-                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;</string>
+                  <string notr="true">font: 14pt &quot;Sans Serif&quot;;
+color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
                   <string>0</string>

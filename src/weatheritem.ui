@@ -22,10 +22,14 @@
      <item>
       <widget class="QLabel" name="day_date">
        <property name="styleSheet">
-        <string notr="true">color: rgb(228, 230, 235);</string>
+        <string notr="true">color: rgb(228, 230, 235);
+font: 16pt &quot;Sans Serif&quot;;</string>
        </property>
        <property name="text">
         <string>Date</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -34,15 +38,22 @@
        <property name="text">
         <string/>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="day_degree">
        <property name="styleSheet">
-        <string notr="true">color: rgb(228, 230, 235);</string>
+        <string notr="true">color: rgb(228, 230, 235);
+font: 16pt &quot;Sans Serif&quot;;</string>
        </property>
        <property name="text">
         <string>Degree</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>

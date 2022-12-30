@@ -1,6 +1,6 @@
 #include "weather.h"
 
-const QString Weather::API_key = "e3dcb98698bd304c5cefb21215978a72";
+extern std::string openweather3parthlib;
 
 Weather::Weather()
 {
@@ -8,15 +8,14 @@ Weather::Weather()
     icon = "qrc:/img/01.png";
     api_units = "metric";
     api_city = "Madrid";
-
-    httpRequest(RequestType::WEATHER);
 }
 
-void Weather::httpRequest(RequestType rType)
+// Http Request from OpenWeatherMap.org
+void Weather::startRequest(RequestType rType)
 {
     if(rType == RequestType::GEO) {
         QString url = "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid="
-                +API_key;
+                +QString::fromStdString(openweather3parthlib);
          http_request_url = url;
          reqType = RequestType::GEO;
     }
@@ -24,7 +23,7 @@ void Weather::httpRequest(RequestType rType)
         /// TODO: edit  "lat":39.8864493,"lon":-83.448253,
         selectedLocationInfo.lat = "35";
         selectedLocationInfo.lon = "139";
-        QString url="https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid="+ API_key;
+        QString url="https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid="+ QString::fromStdString(openweather3parthlib);
         http_request_url = url;
         reqType = RequestType::WEATHER;
     }
@@ -41,6 +40,36 @@ void Weather::httpRequest(RequestType rType)
             this, &Weather::onNetworkReplyError);
     connect(weatherDataReply, &QNetworkReply::sslErrors,
             this, &Weather::on_SSL_Error);
+}
+
+void Weather::insertWeatherInfo(WeatherInfo data)
+{
+    /*** get the Day and Hour of the date ***/
+    // 0- date format : "2023-01-04 12:00:00"
+    QString date = data.date_time;
+    // 1- split with space, take first argument
+    QStringList date_and_time = date.split(' ');
+    QStringList time_h_m_s = date_and_time[1].split(':');   // hour-minute-second time format
+    QString hour_string = date_and_time[1].split(':')[0];
+    int hour = hour_string.toInt();
+    // 2- split with '-' , take third argument
+    QStringList date_y_m_d = date_and_time[0].split('-');   // year-month-day date format
+    QString day = date_y_m_d[2];
+
+
+    // check in which day we are ; Days::DAY1, Days::DAY2 ...etc
+    static int today = day.toInt();
+    static int theDay = 0;
+    if(today != day.toInt()) {
+        today = day.toInt();
+        theDay++;
+    }
+
+    if(theDay > 3)
+        return;
+
+    // assign the data to proper place of array
+    weatherInfos[theDay%4][hour/3] = data;
 }
 
 
@@ -79,9 +108,11 @@ void Weather::onWeatherDataArrived()
         WeatherInfo weather_info;
         int debug_item_i=0;
 
+
         for(auto i_time=jarr.begin(); i_time != jarr.end(); ++i_time) {
             QJsonValue val = *i_time;
             QJsonObject obj = val.toObject();
+
 
 
             weather_info.date_time = obj.value("dt_txt").toString();
@@ -109,7 +140,8 @@ void Weather::onWeatherDataArrived()
                             << "weather description : " << weather_info.weather_description << "\n"
                             << "icon : " << weather_info.icon << "\n";
             debug_item_i++;
-            weatherInfos.push_back(weather_info);
+
+            insertWeatherInfo(weather_info);
          }
     }
     emit weatherDataReady();
