@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Orange Cloud Weather App");
     weather = new Weather;
     weather->startRequest();
+    selected_day=0;
 
     day_0 = new WeatherItem();
     day_1 = new WeatherItem();
@@ -77,6 +78,15 @@ void MainWindow::setData()
     day_0->setButtonStyle(QString("background-color: rgb(255, 255, 255);"
                                  "font: 16pt \"Sans Serif\";"
                                  "color: rgb(0, 85, 255);"));
+    day_1->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_2->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_3->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
 
     ui->selected_hour_temp->setText(weather->weatherInfos[0][7].temp);
     ui->selected_hour_humidity ->setText(weather->weatherInfos[0][7].humidity_percentage);
@@ -157,20 +167,73 @@ void MainWindow::onTimeClicked(bool)
 void MainWindow::onDay0Clicked()
 {
     selected_day=0;
+
+
+    day_0->setButtonStyle(QString("background-color: rgb(255, 255, 255);"
+                                 "font: 16pt \"Sans Serif\";"
+                                 "color: rgb(0, 85, 255);"));
+    day_1->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_2->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_3->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
 }
 
 void MainWindow::onDay1Clicked()
 {
     selected_day=1;
+
+    day_1->setButtonStyle(QString("background-color: rgb(255, 255, 255);"
+                                 "font: 16pt \"Sans Serif\";"
+                                 "color: rgb(0, 85, 255);"));
+    day_0->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_2->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_3->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
 }
 
 void MainWindow::onDay2Clicked()
 {
     selected_day=2;
+
+    day_2->setButtonStyle(QString("background-color: rgb(255, 255, 255);"
+                                 "font: 16pt \"Sans Serif\";"
+                                 "color: rgb(0, 85, 255);"));
+    day_1->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_0->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_3->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
 }
 
 void MainWindow::onDay3Clicked()
 {
     selected_day=3;
+
+    day_3->setButtonStyle(QString("background-color: rgb(255, 255, 255);"
+                                 "font: 16pt \"Sans Serif\";"
+                                 "color: rgb(0, 85, 255);"));
+    day_1->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_2->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
+    day_0->setButtonStyle("background-color: rgb(0, 85, 255);"
+                          "font: 16pt \"Sans Serif\";"
+                          "color: rgb(228, 230, 235);");
 }
 
