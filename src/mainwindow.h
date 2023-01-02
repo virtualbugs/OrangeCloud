@@ -24,11 +24,17 @@ private:
     WeatherItem *day_1;
     WeatherItem *day_2;
     WeatherItem *day_3;
+    int selected_day;
 
 signals:
     void weatherInfoArrived();
 
 public slots:
     void setData();
+    void onTimeClicked(bool);
+    void onDay0Clicked();
+    void onDay1Clicked();
+    void onDay2Clicked();
+    void onDay3Clicked();
 };
 #endif // MAINWINDOW_H

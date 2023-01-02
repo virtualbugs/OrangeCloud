@@ -20,16 +20,13 @@
    <item>
     <layout class="QVBoxLayout" name="day_vlayout" stretch="0,4,1">
      <item>
-      <widget class="QLabel" name="day_date">
+      <widget class="QPushButton" name="day_date">
        <property name="styleSheet">
         <string notr="true">color: rgb(228, 230, 235);
 font: 16pt &quot;Sans Serif&quot;;</string>
        </property>
        <property name="text">
         <string>Date</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>

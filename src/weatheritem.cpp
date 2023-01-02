@@ -7,6 +7,8 @@ WeatherItem::WeatherItem(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    connect(ui->day_date, SIGNAL(clicked()),
+            SIGNAL(dayClicked()));
 }
 
 WeatherItem::~WeatherItem()
@@ -51,4 +53,9 @@ void WeatherItem::setIcon(const QString &newIcon)
 
 
     ui->day_image->setPixmap(pix);
+}
+
+void WeatherItem::setButtonStyle(QString style)
+{
+    ui->day_date->setStyleSheet(style);
 }

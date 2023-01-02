@@ -21,12 +21,16 @@ public:
     void setIcon(const QString &newIcon);
     void setTemp(const QString &newTemp);
     void setDate(const QString &newDate);
+    void setButtonStyle(QString style);
 
     QImage image;
     QNetworkAccessManager networkmanager;
 
 private:
     Ui::WeatherItem *ui;
+
+signals:
+    void dayClicked();
 };
 
 #endif // WEATHERITEM_H
